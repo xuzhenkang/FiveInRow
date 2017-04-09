@@ -277,7 +277,31 @@ public class ChessBoard extends JPanel implements MouseListener {
    }  
      
      
-
+   public void restartGame(){  
+       //清除棋子  
+       for(int i=0;i<chessList.length;i++){  
+           chessList[i]=null;  
+       }  
+       //恢复游戏相关的变量值  
+       isBlack=true;  
+       gameOver=false; //游戏是否结束  
+       chessCount =0; //当前棋盘棋子个数  
+       repaint();  
+   }  
+     
+   //悔棋  
+   public void goback(){  
+       if(chessCount==0)  
+           return ;  
+       chessList[chessCount-1]=null;  
+       chessCount--;  
+       if(chessCount>0){  
+           xIndex=chessList[chessCount-1].getX();  
+           yIndex=chessList[chessCount-1].getY();  
+       }  
+       isBlack=!isBlack;  
+       repaint();  
+   }  
      
    //矩形Dimension  
    public Dimension getPreferredSize(){  

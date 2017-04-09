@@ -77,13 +77,13 @@ public class StartChessJFrame extends JFrame {
               //重新开始  
               //JFiveFrame.this内部类引用外部类
               System.out.println("重新开始");
-              //chessBoard.restartGame();
+              chessBoard.restartGame();
           }
           else if (obj == exitMenuItem || obj == exitButton)
               System.exit(0);
           else if (obj == backMenuItem || obj == backButton) {
               System.out.println("悔棋...");
-              //chessBoard.goback();
+              chessBoard.goback();
           }  
       }  
   }  
